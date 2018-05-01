@@ -69,7 +69,7 @@ public class TTSServiceBaiduImpl implements TTSService{
             if(res1 != null){
                 log.error(res1.toString(4));
                 audioMessageVo.setMessage(res1.getString("err_msg"));
-                audioMessageVo.setMessageCode(MessageCode.ERROR);
+                audioMessageVo.setCode(MessageCode.ERROR);
                 return audioMessageVo;
             }
         }

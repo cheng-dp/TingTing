@@ -27,6 +27,12 @@ public class ParserServiceImpl implements ParserService{
 
     private static final RestTemplate rest = new RestTemplate();
 
+    private final ParseServerProperties parseServerProperties;
+
+    public ParserServiceImpl(ParseServerProperties parseServerProperties){
+        this.parseServerProperties = parseServerProperties;
+    }
+
     @Override
     public boolean isUrl(String urlStr){
         UrlValidator urlValidator = new UrlValidator();
@@ -57,14 +63,15 @@ public class ParserServiceImpl implements ParserService{
         if(!isUrl(urlStr)){
             return new ParseResultVo(MessageCode.ERROR,urlStr + " not valid url.","");
         }
-        String testUrl = RestEndPoint.TEXT_PARSER_END_POINT;
         Map<String,String> uriVariables = new HashMap<String, String>();
 
         ParseRequestVo parseRequestVo = new ParseRequestVo(urlStr,lanCode);
 
+        String parseServerUrl = parseServerProperties.getHost() + ":" + parseServerProperties.getPort()
+                + RestEndPoint.TEXT_PARSER_END_POINT;
         try{
             ParseResultVo ret =
-                    rest.postForObject(testUrl,parseRequestVo,ParseResultVo.class,uriVariables);
+                    rest.postForObject(parseServerUrl,parseRequestVo,ParseResultVo.class,uriVariables);
             return ret;
         }
         catch(Exception e){

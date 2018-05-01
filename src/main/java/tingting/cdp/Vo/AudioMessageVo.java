@@ -1,7 +1,6 @@
 package tingting.cdp.Vo;
 
 import lombok.*;
-import sun.plugin2.message.Message;
 import tingting.cdp.MessageCode;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class AudioMessageVo {
-    private int messageCode;
+    private int code;
     private String message;
     private List<Byte> audioByte;
 

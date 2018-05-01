@@ -1,9 +1,9 @@
+
 package tingting.cdp;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,15 +17,11 @@ import java.util.List;
 /**
  * Created by cdp on 2017/12/14.
  */
+/*
 @RestController
 public class TingTingController {
 
-    @Autowired
-    ParserService parserService;
 
-    @Autowired
-    @Qualifier("baiduTTS")
-    TTSService ttsService;
 
     @RequestMapping(
         value="/getAudioForUrl",
@@ -59,5 +55,5 @@ public class TingTingController {
         return e.toString();
     }
 
-
 }
+*/

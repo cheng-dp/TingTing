@@ -1,7 +1,6 @@
 package tingting.cdp.Vo;
 
 import lombok.*;
-import sun.plugin2.message.Message;
 import tingting.cdp.MessageCode;
 
 /**
